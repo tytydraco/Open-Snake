@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public float screenZoom = 1f;
 
     /* Interval in seconds to move one full unit */
-    public float movementInterval = 0.15f;
+    public float movementInterval = 0.1f;
 
     /* Number of tail pieces to start with */
     public int startingTailLength = 3;

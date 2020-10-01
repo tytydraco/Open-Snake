@@ -544,12 +544,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c439c9f653ded74d818bff8669cc6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenZoom: 1
-  movementInterval: 0.15
-  startingTailLength: 3
   tailSample: {fileID: 3247616368093589855, guid: aa0d3d7085f007c4ba41181eb73868cb, type: 3}
   foodSample: {fileID: 4694645921546592821, guid: 50e8e2056102bef459946b4ed9e747d4, type: 3}
   gameOverText: {fileID: 34696683}
+  screenZoom: 1
+  movementInterval: 0.1
+  startingTailLength: 3
 --- !u!50 &1982737278
 Rigidbody2D:
   serializedVersion: 4
