@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         while (true) {
             randX = Mathf.RoundToInt(Random.Range(-halfWidth, halfWidth));
             randY = Mathf.RoundToInt(Random.Range(-halfHeight, halfHeight));
-            foodPosition = new Vector2(randX, randY);
+            foodPosition = new Vector3(randX, randY);
 
             /* Bail if intersecting the head */
             if (transform.position == foodPosition)
