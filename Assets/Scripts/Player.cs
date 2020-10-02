@@ -84,24 +84,22 @@ public class Player : MonoBehaviour
         int halfWidth = Mathf.FloorToInt(camera.aspect * halfHeight) - 1;
 
         /* Loop until we find an available position */
-        int randX, randY;
-        Vector3 foodPosition;
-        while (true) {
-            randX = Mathf.RoundToInt(Random.Range(-halfWidth, halfWidth));
-            randY = Mathf.RoundToInt(Random.Range(-halfHeight, halfHeight));
-            foodPosition = new Vector3(randX, randY);
+        int randX = Mathf.RoundToInt(Random.Range(-halfWidth, halfWidth));
+        int randY = Mathf.RoundToInt(Random.Range(-halfHeight, halfHeight));
+        Vector3 foodPosition = new Vector3(randX, randY);
 
-            /* Bail if intersecting the head */
-            if (transform.position == foodPosition)
-                continue;
-            
-            /* Bail if intersecting the tail */
-            foreach (GameObject tail in tails)
-                if (tail.transform.position == foodPosition)
-                    continue;
-            
-            /* All clear, back out and spawn */
-            break;
+        /* Bail if intersecting the head */
+        if (transform.position == foodPosition) {
+            AddFood();
+            return;
+        }
+        
+        /* Bail if intersecting the tail */
+        foreach (GameObject tail in tails) {
+            if (tail.transform.position == foodPosition) {
+                AddFood();
+                return;
+            }
         }
 
         /* Spawn the food */
